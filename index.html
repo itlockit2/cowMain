@@ -52,8 +52,29 @@
       colorBackground.style.backgroundImage = "url(../images/white.png)";
       mainWrapper.style.backgroundColor = "#cdcdcd";
     }
+
+    function onReady(callback) {
+      var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName("body")[0] !== undefined) {
+          window.clearInterval(intervalId);
+          callback.call(this);
+        }
+      }, 1000);
+    }
+
+    function setVisible(selector, visible) {
+      document.querySelector(selector).style.display = visible
+        ? "flex"
+        : "none";
+    }
+
+    onReady(function() {
+      setVisible(".main__wrapper", true);
+      setVisible("#animationWindow", false);
+    });
   </script>
   <body>
+    <div id="animationWindow"></div>
     <div class="main__wrapper" id="mainWrapper">
       <div class="main">
         <div class="main__column">
@@ -180,5 +201,8 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.10.1/bodymovin.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
