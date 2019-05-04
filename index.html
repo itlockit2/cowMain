@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>한우 축사 관리 홈페이지</title>
+  </head>
+
+  <script>
+    function changeColor1() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      const vertialLine = document.getElementById("vertialLine");
+      colorBackground.style.backgroundImage = "url(../images/mint.png)";
+      mainWrapper.style.backgroundColor = "#B6CFE3";
+    }
+    function changeColor2() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      colorBackground.style.backgroundImage = "url(../images/pink.jpg)";
+      mainWrapper.style.backgroundColor = "#E68B83";
+    }
+    function changeColor3() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      colorBackground.style.backgroundImage = "url(../images/yellow.png)";
+      mainWrapper.style.backgroundColor = "#E8C980";
+    }
+    function changeColor4() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      colorBackground.style.backgroundImage = "url(../images/green.png)";
+      mainWrapper.style.backgroundColor = "#8CD4D0";
+    }
+    function changeColor5() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      colorBackground.style.backgroundImage = "url(../images/purple.png)";
+      mainWrapper.style.backgroundColor = "#C088DB";
+    }
+    function changeColor6() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      colorBackground.style.backgroundImage = "url(../images/darkYellow.png)";
+      mainWrapper.style.backgroundColor = "#E2FAB6";
+    }
+    function changeDefault() {
+      const mainWrapper = document.getElementById("mainWrapper");
+      const colorBackground = document.getElementById("buttonBackground");
+      colorBackground.style.backgroundImage = "url(../images/white.png)";
+      mainWrapper.style.backgroundColor = "#cdcdcd";
+    }
+  </script>
+  <body>
+    <div class="main__wrapper" id="mainWrapper">
+      <div class="main">
+        <div class="main__column">
+          <p class="main__title">한우 축사 관리 홈페이지</p>
+          <p class="sub__title">
+            실시간 CCTV 스트리밍, 방문자 및 출입차량 자동 감지, 소 승가 자동
+            감지 및 알림 서비스 제공
+          </p>
+          <p class="contact__text">
+            상품 문의<br />
+            대표 : 이상욱<br />
+            휴대전화 : 010-5386-8735
+          </p>
+        </div>
+        <div class="button__column" id="buttonBackground">
+          <hr class="hr-text" data-content="서비스 중인 농가" />
+          <div class="card">
+            <div
+              class="box box1"
+              onmouseover="changeColor1()"
+              onmouseout="changeDefault()"
+            >
+              <div class="box1__image"></div>
+              <div class="box__text">
+                횡성군
+              </div>
+              <button class="button">
+                <a href="http://hsgcow2019.iptime.org">
+                  <span class="link__text">이동하기</span>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="box box2"
+              onmouseover="changeColor2()"
+              onmouseout="changeDefault()"
+            >
+              <div class="box2__image"></div>
+              <div class="box__text">
+                홍천군
+              </div>
+              <button class="button">
+                <a href="http://hsgcow2019.iptime.org">
+                  <span class="link__text">이동하기</span>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="box box3"
+              onmouseover="changeColor3()"
+              onmouseout="changeDefault()"
+            >
+              <div class="box3__image"></div>
+              <div class="box__text">
+                평창군
+              </div>
+              <button class="button">
+                <a href="http://hsgcow2019.iptime.org">
+                  <span class="link__text">이동하기</span>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="box box4"
+              onmouseover="changeColor4()"
+              onmouseout="changeDefault()"
+            >
+              <div class="box4__image"></div>
+              <div class="box__text">
+                괴산군
+              </div>
+
+              <button class="button">
+                <a href="http://hsgcow2019.iptime.org">
+                  <span class="link__text">이동하기</span>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="box box5"
+              onmouseover="changeColor5()"
+              onmouseout="changeDefault()"
+            >
+              <div class="box5__image"></div>
+              <div class="box__text">
+                용인시
+              </div>
+
+              <button class="button">
+                <a href="http://hsgcow2019.iptime.org">
+                  <span class="link__text">이동하기</span>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="box box6"
+              onmouseover="changeColor6()"
+              onmouseout="changeDefault()"
+            >
+              <div class="box6__image"></div>
+              <div class="box__text">
+                이천시
+              </div>
+
+              <button class="button">
+                <a href="http://hsgcow2019.iptime.org">
+                  <span class="link__text">이동하기</span>
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
