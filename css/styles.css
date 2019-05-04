@@ -66,7 +66,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #ebf2f5;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -92,7 +92,7 @@ a {
   height: 100%;
   padding: 20px;
   text-align: center;
-  display: flex;
+  display: none;
   background-color: #cdcdcd;
   transition: all 0.5s cubic-bezier(0.02, 0.01, 0.47, 1);
 }
@@ -525,6 +525,12 @@ a {
   .main__wrapper {
     height: 120%;
   }
+}
+#animationWindow {
+  left: 50v;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
 @media screen and (max-width: 600px) {
   .main {
