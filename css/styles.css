@@ -6,12 +6,71 @@
   font-weight: 450;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: none;
+  }
+}
+
+@keyframes fadeBlur {
+  from {
+    opcaity: 0;
+    filter: blur(0px);
+  }
+  to {
+    opcaity: 1;
+    filter: blur(5px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
 body {
   background-color: black;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
   font-family: "NotoSerif", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   word-break: keep-all;
@@ -88,7 +147,8 @@ a {
 .button__column .box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
+  justify-content: space-evenly;
   align-items: center;
   height: 9vw;
   color: #333;
@@ -114,13 +174,20 @@ a {
   opacity: 1;
   box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
 }
+.button__column .box:hover .box__text {
+  position: relative;
+  -webkit-transform: translateZ (0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: calc(25px + 1vw);
+}
 .box1__image {
   background-image: url("../images/hsg_logo.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 90%;
-  -moz-background-size: 90%;
-  -o-background-size: 90%;
-  background-size: 90%;
+  -webkit-background-size: 70%;
+  -moz-background-size: 70%;
+  -o-background-size: 70%;
+  background-size: 70%;
   background-position: center;
   width: 100%;
   height: 100%;
@@ -129,10 +196,10 @@ a {
 .box2__image {
   background-image: url("../images/hcg_logo.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 50%;
-  -moz-background-size: 50%;
-  -o-background-size: 50%;
-  background-size: 50%;
+  -webkit-background-size: 30%;
+  -moz-background-size: 30%;
+  -o-background-size: 30%;
+  background-size: 30%;
   background-position: center;
   width: 100%;
   height: 100%;
@@ -141,10 +208,10 @@ a {
 .box3__image {
   background-image: url("../images/pcg_logo.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 50%;
-  -moz-background-size: 50%;
-  -o-background-size: 50%;
-  background-size: 50%;
+  -webkit-background-size: 30%;
+  -moz-background-size: 30%;
+  -o-background-size: 30%;
+  background-size: 30%;
   background-position: center;
   width: 100%;
   height: 100%;
@@ -153,10 +220,10 @@ a {
 .box4__image {
   background-image: url("../images/gsg_logo.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 50%;
-  -moz-background-size: 50%;
-  -o-background-size: 50%;
-  background-size: 50%;
+  -webkit-background-size: 30%;
+  -moz-background-size: 30%;
+  -o-background-size: 30%;
+  background-size: 30%;
   background-position: center;
   width: 100%;
   height: 100%;
@@ -178,17 +245,22 @@ a {
 .box6__image {
   background-image: url("../images/ic_logo.png");
   background-repeat: no-repeat;
-  -webkit-background-size: 60%;
-  -moz-background-size: 60%;
-  -o-background-size: 60%;
-  background-size: 60%;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
   background-position: center;
   width: 100%;
   height: 100%;
   transition: all 1s cubic-bezier(0.02, 0.01, 0.47, 1);
 }
 .box__text {
-  font-size: 20px;
+  position: relative;
+  -webkit-transform: translateZ (0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 25px;
+  transition: all 0.5s cubic-bezier(0.02, 0.01, 0.47, 1);
 }
 .button__column .box.box1:hover .box1__image,
 .button__column .box.box2:hover .box2__image,
@@ -336,15 +408,22 @@ a {
   filter: blur(0px);
   width: auto;
   height: 5vh;
+  min-height: 40px;
   opacity: 1;
   transform: scalex(1);
 }
 
 .button span {
   color: #333;
-  font-size: 12px;
+  font-size: 19px;
   font-weight: 500;
   letter-spacing: 0.7px;
+  position: relative;
+  -webkit-transform: translateZ (0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "NotoSerif", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .main__column .main__title {
   color: #f7f8f8;
@@ -352,6 +431,7 @@ a {
   line-height: 40px;
   background-color: #333;
   width: fit-content;
+  width: -webkit-fit-content;
   padding: 10px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
@@ -420,7 +500,7 @@ a {
   background-color: transparent;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .main {
     flex-direction: column;
   }
@@ -437,69 +517,57 @@ a {
     -webkit-background-size: 60%;
     -moz-background-size: 60%;
     -o-background-size: 60%;
-    background-size: 60%;
+    background-size: 70%;
     background-position: top right;
   }
   .main__wrapper {
     height: 120%;
   }
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0px);
-    transform: none;
+@media screen and (max-width: 600px) {
+  .main {
+    background-image: url("../images/cow.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 60%;
+    -moz-background-size: 60%;
+    -o-background-size: 70%;
+    background-size: 80%;
+    background-position: top right;
   }
 }
-
-@keyframes fadeBlur {
-  from {
-    opcaity: 0;
-    filter: blur(0px);
-  }
-  to {
-    opcaity: 1;
-    filter: blur(5px);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
-  25% {
-    transform: rotate(3deg) translate3d(0, 0, 0);
-  }
-  50% {
-    transform: rotate(-3deg) translate3d(0, 0, 0);
-  }
-  75% {
-    transform: rotate(1deg) translate3d(0, 0, 0);
-  }
-  100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
+@media screen and (max-width: 500px) {
+  .main {
+    background-image: url("../images/cow.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 60%;
+    -moz-background-size: 60%;
+    -o-background-size: 70%;
+    background-size: 100%;
+    background-position: top right;
   }
 }
-@keyframes storm {
-  0% {
-    transform: translate3d(0, 0, 0) translateZ(0);
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .button__column .box {
+    justify-content: space-around;
   }
-  25% {
-    transform: translate3d(4px, 0, 0) translateZ(0);
+  .button__column {
+    justify-content: space-around;
   }
-  50% {
-    transform: translate3d(-3px, 0, 0) translateZ(0);
+  .main__column .main__title {
+    width: 24vw;
   }
-  75% {
-    transform: translate3d(2px, 0, 0) translateZ(0);
+  .main__column .contact__text {
+    width: 50%;
   }
-  100% {
-    transform: translate3d(0, 0, 0) translateZ(0);
+  .main__column {
+    min-height: 400px;
+  }
+  .button__column .box {
+    flex-shrink: 0;
+    -ms-interpolation-mode: bicubic;
+    min-height: 1px;
+  }
+  .button {
+    min-height: 1px;
   }
 }
