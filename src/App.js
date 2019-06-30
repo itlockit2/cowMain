@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactBodymovin from "react-bodymovin";
+import ReactBodymovin from 'react-bodymovin/lib/ReactBodymovinFull'
 import animation from "./animation.json";
 import "./App.css";
 import styled from "styled-components";
@@ -187,9 +187,13 @@ class App extends Component {
               <p className="contact__text">
                 가입 문의
                 <br />
-                대표 : 이상욱
+                에스에스네트웍스
                 <br />
-                휴대전화 : 010-5386-8735
+                휴대전화 : 070-7787-9000
+                <br />
+                이메일 주소
+                <br />
+                simonlswcom@naver.com
               </p>
             </div>
             <ButtonWrapper
@@ -212,18 +216,18 @@ class App extends Component {
                   <div className="box__text">횡성군</div>
                   <div className="box__button">
                     <button className="button">
-                      <a href="http://hsgcow2019.iptime.org">
+                      <a href="http://1.249.116.227:5000">
                         <span className="link__text">이동하기</span>
                       </a>
                     </button>
                   </div>
                 </div>
-              </div>
+              </div>                                                                                                                                                                
               <div className="card">
                 <div
                   className="box box2"
                   onMouseOver={() => {
-                    this._changeColor2();
+                    this._changeColor2();                                                                                                                                                                                                                                                                                                                                                                             
                   }}
                   onMouseOut={() => {
                     this._changeDefault();
@@ -232,7 +236,7 @@ class App extends Component {
                   <div className="box2__image" />
                   <div className="box__text">홍천군</div>
                   <button className="button">
-                    <a href="http://hsgcow2019.iptime.org">
+                    <a href="http://1.249.116.227:5000">
                       <span className="link__text">이동하기</span>
                     </a>
                   </button>
@@ -251,7 +255,7 @@ class App extends Component {
                   <div className="box3__image" />
                   <div className="box__text">평창군</div>
                   <button className="button">
-                    <a href="http://hsgcow2019.iptime.org">
+                    <a href="http://1.249.116.227:5000">
                       <span className="link__text">이동하기</span>
                     </a>
                   </button>
@@ -271,7 +275,7 @@ class App extends Component {
                   <div className="box__text">괴산군</div>
 
                   <button className="button">
-                    <a href="http://hsgcow2019.iptime.org">
+                    <a href="http://1.249.116.227:5000">
                       <span className="link__text">이동하기</span>
                     </a>
                   </button>
@@ -291,7 +295,7 @@ class App extends Component {
                   <div className="box__text">용인시</div>
 
                   <button className="button">
-                    <a href="http://hsgcow2019.iptime.org">
+                    <a href="http://1.249.116.227:5000">
                       <span className="link__text">이동하기</span>
                     </a>
                   </button>
@@ -311,7 +315,7 @@ class App extends Component {
                   <div className="box__text">이천시</div>
 
                   <button className="button">
-                    <a href="http://hsgcow2019.iptime.org">
+                    <a href="http://1.249.116.227:5000">
                       <span className="link__text">이동하기</span>
                     </a>
                   </button>
